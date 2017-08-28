@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      Add New Servers or Blueprints
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <form>
+        <div class="row">
+          <div class="col-12 form-group">
+            <label for="name">
+              <b>Server Name</b>
+              </label>
+            <input type="text"
+              id="name"
+              placeholder="A New Server"
+              class="form-control"
+              name="name"
+              [(ngModel)]="name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 form-group">
+            <label for="content">
+              <b>Server Content</b>
+                </label>
+            <input type="text"
+              name="content"
+              id="content"
+              placeholder="Some test content"
+              class="form-control"
+              [(ngModel)]="content">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary"
+              type="button"
+              (click)="addServer()">Add Server</button>
+            <button class="btn btn-primary"
+              type="button"
+              (click)="addBlueprint()">Add Server Blueprint</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-12">
+      <ul class="list-group"
+        *ngFor="let serverElement of serverElements">
+        <li class=" list-group-item"
+         [ngClass]="{'list-group-item-danger' : serverElement.type == 'server','list-group-item-primary' : serverElement.type == 'blueprint'}">{{serverElement.name}}</li>
+        <li class='list-group-item'>{{serverElement.content}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

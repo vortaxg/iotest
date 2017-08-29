@@ -1,0 +1,38 @@
+<form>
+  <div class="row">
+    <div class="col-12 form-group">
+      <label for="name">
+        <b>Server Name</b>
+        </label>
+      <input type="text"
+        id="name"
+        placeholder="A New Server"
+        class="form-control"
+        name="name"
+        [(ngModel)]="name">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 form-group">
+      <label for="content">
+        <b>Server Content</b>
+          </label>
+      <input type="text"
+        name="content"
+        id="content"
+        placeholder="Some test content"
+        class="form-control"
+        [(ngModel)]="content">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-primary"
+        type="button"
+        (click)="onAddServer()">Add Server</button>
+      <button class="btn btn-primary"
+        type="button"
+        (click)="onAddBlueprint()">Add Server Blueprint</button>
+    </div>
+  </div>
+</form>

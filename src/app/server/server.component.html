@@ -1,0 +1,5 @@
+<ul class="list-group">
+  <li class=" list-group-item"
+    [ngClass]="{'list-group-item-danger' : serverElement.type == 'server','list-group-item-primary' : serverElement.type == 'blueprint'}">{{serverElement.name}}</li>
+  <li class='list-group-item'>{{serverElement.content}}</li>
+</ul>

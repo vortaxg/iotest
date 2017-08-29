@@ -37,10 +37,10 @@
           <div class="col-12">
             <button class="btn btn-primary"
               type="button"
-              (click)="addServer()">Add Server</button>
+              (click)="onServerAdd()">Add Server</button>
             <button class="btn btn-primary"
               type="button"
-              (click)="addBlueprint()">Add Server Blueprint</button>
+              (click)="onBlueprintAdd()">Add Server Blueprint</button>
           </div>
         </div>
       </form>
@@ -49,12 +49,8 @@
   <hr>
   <div class="row">
     <div class="col-12">
-      <ul class="list-group"
-        *ngFor="let serverElement of serverElements">
-        <li class=" list-group-item"
-         [ngClass]="{'list-group-item-danger' : serverElement.type == 'server','list-group-item-primary' : serverElement.type == 'blueprint'}">{{serverElement.name}}</li>
-        <li class='list-group-item'>{{serverElement.content}}</li>
-      </ul>
+      <app-server *ngFor="let serverElement of serverElements"
+        [el]='serverElement'></app-server>
     </div>
   </div>
 </div>
